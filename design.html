@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Life OS - 90-Day Arc</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols for the Pencil Icon -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              accent: '#a300f6',
+              obsidian: '#1e1e1e',
+              deepblack: '#121212'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    .contribution-grid {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap: 3px;
+    }
+    .contribution-square {
+      aspect-ratio: 1/1;
+      border-radius: 2px;
+    }
+    /* Specific overrides for the requested accent color in the graph */
+    .bg-accent-filled {
+      background-color: #a300f6;
+    }
+    .bg-accent-low {
+      background-color: rgba(163, 0, 246, 0.3);
+    }
+    .bg-accent-mid {
+      background-color: rgba(163, 0, 246, 0.6);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen">
+<!-- BEGIN: MainDashboardContainer -->
+<main class="max-w-6xl mx-auto px-6 py-12 md:py-20">
+<!-- BEGIN: DailyOverview -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-purpose="daily-overview">
+<div>
+<h1 class="text-3xl font-bold text-white" id="current-date">90-Day Arc</h1>
+</div>
+</header>
+<!-- END: DailyOverview -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- BEGIN: GoalTrackerSection -->
+<section class="lg:col-span-2" data-purpose="goal-tracker">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-semibold text-white flex items-center gap-2">
+<svg class="h-5 w-5 text-brand-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Quarterly Goals
+          </h2>
+<span class="text-xs font-medium text-zinc-400 bg-brand-deepblack border border-zinc-800 px-2 py-1 rounded">3 Active</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Goal Card 1 -->
+<article class="bg-brand-deepblack p-5 rounded-2xl shadow-lg border border-zinc-800 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-bold text-white leading-tight">Learn Italian</h3>
+<button class="text-zinc-500 hover:text-brand-accent transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<!-- Linear Progress Visual -->
+<div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden mb-2">
+<div class="bg-brand-accent h-full rounded-full" style="width: 65%;"></div>
+</div>
+<p class="text-sm font-medium text-zinc-300">65% <span class="text-zinc-500 font-normal">complete</span></p>
+</div>
+</article>
+<!-- Goal Card 2 -->
+<article class="bg-brand-deepblack p-5 rounded-2xl shadow-lg border border-zinc-800 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-bold text-white leading-tight">Marathon Prep</h3>
+<button class="text-zinc-500 hover:text-brand-accent transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden mb-2">
+<div class="bg-brand-accent h-full rounded-full" style="width: 82%;"></div>
+</div>
+<p class="text-sm font-medium text-zinc-300">82% <span class="text-zinc-500 font-normal">complete</span></p>
+</div>
+</article>
+<!-- Goal Card 3 -->
+<article class="bg-brand-deepblack p-5 rounded-2xl shadow-lg border border-zinc-800 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-bold text-white leading-tight">Portfolio Launch</h3>
+<button class="text-zinc-500 hover:text-brand-accent transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden mb-2">
+<div class="bg-brand-accent h-full rounded-full" style="width: 30%;"></div>
+</div>
+<p class="text-sm font-medium text-zinc-300">30% <span class="text-zinc-500 font-normal">complete</span></p>
+</div>
+</article>
+</div>
+</section>
+<!-- END: GoalTrackerSection -->
+<!-- BEGIN: HabitTrackerSection -->
+<section class="lg:col-span-1" data-purpose="habit-tracker">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-semibold text-white flex items-center gap-2">
+<svg class="h-5 w-5 text-brand-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Daily Habits
+          </h2>
+<button class="text-zinc-500 hover:text-zinc-300">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="bg-brand-deepblack rounded-2xl shadow-lg border border-zinc-800 divide-y divide-zinc-800 overflow-hidden">
+<!-- Habit Item: Meditation -->
+<div class="p-4 flex items-center justify-between hover:bg-zinc-800/50 transition-colors">
+<div class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-brand-accent focus:ring-brand-accent" type="checkbox"/>
+<div>
+<p class="text-sm font-medium text-zinc-100">Meditation</p>
+<p class="text-[10px] text-zinc-500">Target: 15 mins</p>
+</div>
+</div>
+<div class="flex items-center bg-zinc-800 rounded-lg p-1">
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">-</button>
+<input class="w-8 bg-transparent border-none p-0 text-center text-xs font-bold text-zinc-200 focus:ring-0" type="text" value="15"/>
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">+</button>
+</div>
+</div>
+<!-- Habit Item: Reading -->
+<div class="p-4 flex items-center justify-between hover:bg-zinc-800/50 transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-brand-accent focus:ring-brand-accent" type="checkbox"/>
+<div>
+<p class="text-sm font-medium text-zinc-100">Reading</p>
+<p class="text-[10px] text-zinc-500">Target: 20 pages</p>
+</div>
+</div>
+<div class="flex items-center bg-zinc-800 rounded-lg p-1">
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">-</button>
+<input class="w-8 bg-transparent border-none p-0 text-center text-xs font-bold text-zinc-200 focus:ring-0" type="text" value="25"/>
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">+</button>
+</div>
+</div>
+<!-- Habit Item: Gym -->
+<div class="p-4 flex items-center justify-between hover:bg-zinc-800/50 transition-colors">
+<div class="flex items-center gap-3">
+<input class="h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-brand-accent focus:ring-brand-accent" type="checkbox"/>
+<div>
+<p class="text-sm font-medium text-zinc-100">Gym Session</p>
+<p class="text-[10px] text-zinc-500">Target: 1 rep</p>
+</div>
+</div>
+<div class="flex items-center bg-zinc-800 rounded-lg p-1">
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">-</button>
+<input class="w-8 bg-transparent border-none p-0 text-center text-xs font-bold text-zinc-200 focus:ring-0" type="text" value="0"/>
+<button class="px-2 py-0.5 text-zinc-400 hover:text-white">+</button>
+</div>
+</div>
+</div>
+<!-- Contribution Graph (GitHub Style) -->
+<div class="mt-4 p-4 bg-brand-deepblack border border-zinc-800 rounded-2xl">
+<p class="text-xs font-medium text-zinc-500 mb-3 uppercase tracking-wider">90-Day Contribution Graph</p>
+<div class="contribution-grid">
+<!-- 13 columns (weeks), each with 7 squares. Colors mapped to brand accent. -->
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-low"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-filled"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-filled"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-filled"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div>
+</div>
+<div class="grid grid-rows-7 gap-[3px]">
+<div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-low"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-filled"></div><div class="contribution-square bg-zinc-800"></div><div class="contribution-square bg-accent-mid"></div><div class="contribution-square bg-accent-low"></div>
+</div>
+</div>
+<div class="flex justify-between text-[8px] mt-2 text-zinc-600 uppercase tracking-tighter">
+<span class="">Less</span><span class="">More</span>
+</div>
+</div>
+</section>
+<!-- END: HabitTrackerSection -->
+</div>
+</main>
+<!-- END: MainDashboardContainer -->
+</body></html>
