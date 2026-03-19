@@ -52,15 +52,29 @@ body {
   font-weight: 700;
 }
 
-.grid-layout {
+.dashboard-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 2.5rem;
+  gap: 3rem;
+  grid-template-areas: 
+    "goals habits"
+    "timeline contribution";
 }
 
+.area-goals { grid-area: goals; }
+.area-habits { grid-area: habits; }
+.area-timeline { grid-area: timeline; }
+.area-contribution { grid-area: contribution; }
+
 @media (max-width: 1024px) {
-  .grid-layout {
+  .dashboard-grid {
     grid-template-columns: 1fr;
+    grid-template-areas: 
+      "goals"
+      "habits"
+      "timeline"
+      "contribution";
+    gap: 3.5rem;
   }
 }
 

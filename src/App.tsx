@@ -13,15 +13,12 @@ import { AddHabitModal } from './components/AddHabitModal';
 function App() {
   const [editingGoal, setEditingGoal] = useState<Goal | null>(null);
   const [isAddHabitModalOpen, setIsAddHabitModalOpen] = useState(false);
-
   const addGoal = useStore(state => state.addGoal);
   const goals = useStore(state => state.goals);
 
   const handleEditGoal = (goal: Goal) => {
     setEditingGoal(goal);
   };
-
-
 
   const handleAddGoalClick = () => {
     if (goals.length < 3) {
@@ -46,18 +43,22 @@ function App() {
       </header>
 
       <main>
-        <div className="grid-layout">
-           <div>
+        <div className="dashboard-grid">
+           {/* Mobile Flow: Goals (1) -> Habits (2) -> Timeline (3) -> Contribution (4) */}
+           <div className="area-goals">
              <GoalsSection onEditGoal={handleEditGoal} onAddGoal={handleAddGoalClick} />
-             <div style={{ marginTop: '3rem' }}>
-               <DailyTimeline />
-             </div>
            </div>
-           <div>
+           
+           <div className="area-habits">
              <HabitsSection onAddHabit={() => setIsAddHabitModalOpen(true)} />
-             <div style={{ marginTop: '3rem' }}>
-               <ContributionGraph />
-             </div>
+           </div>
+
+           <div className="area-timeline">
+             <DailyTimeline />
+           </div>
+
+           <div className="area-contribution">
+             <ContributionGraph />
            </div>
         </div>
       </main>
